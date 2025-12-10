@@ -11,7 +11,9 @@ Each project focuses on a specific Python concept such as functions, loops, file
 | Project | Description |
 |--------|-------------|
 | **simple-calculator** | Basic calculator program using user input and arithmetic operations. |
-#| **guessing-game** | Number guessing game using loops and conditionals. |
+| **guessing-game** | Number guessing game using loops and conditionals. |
+<!--
+
 | **grocery-list** | CLI tool for adding/removing items using Python lists. |
 | **contact-book** | Contact manager using dictionaries for key-value storage. |
 | **password-generator** | Random password generator using functions and Python libraries. |
@@ -20,6 +22,7 @@ Each project focuses on a specific Python concept such as functions, loops, file
 | **login-system** | Login/auth system with error handling and input validation. |
 | **weather-api** | App that fetches weather data using a public API. |
 | **web-scraper** | Web scraping script using BeautifulSoup to extract data. |
+-->
 
 More projects will be added as I continue learning and practicing.
 
