@@ -1,4 +1,4 @@
-# Python Mini Projects 🐍
+# Python Mini Projects 
 
 This repository contains a collection of small Python practice projects I’m building while rebuilding my fundamentals and improving my backend development skills.
 
@@ -6,7 +6,7 @@ Each project focuses on a specific Python concept such as functions, loops, file
 
 ---
 
-## 📁 Project List
+## Project List
 
 | Project | Description |
 |--------|-------------|
@@ -25,7 +25,7 @@ More projects will be added as I continue learning and practicing.
 
 ---
 
-## 🎯 Purpose of This Repository
+## Purpose of This Repository
 
 - Strengthen core Python fundamentals  
 - Practice clean code, modular design, and documentation  
@@ -35,7 +35,7 @@ More projects will be added as I continue learning and practicing.
 
 ---
 
-## 🛠️ Tech Used
+## Tech Used
 - Python 3.x  
 - BeautifulSoup (for scraping)  
 - Requests (for API access)  
@@ -44,7 +44,7 @@ More projects will be added as I continue learning and practicing.
 
 ---
 
-## 🚀 What’s Next?
+## What’s Next?
 I’m actively working on:
 
 - **AI-Powered Resume Analyzer** (FastAPI + OpenAI API)  
@@ -55,7 +55,7 @@ Stay tuned for more projects!
 
 ---
 
-## 📬 Connect With Me
+## Connect With Me
 - GitHub: [Preet-Patel-152](https://github.com/Preet-Patel-152)
 - LinkedIn: *(add your link here)*
 
