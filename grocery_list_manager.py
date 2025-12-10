@@ -35,6 +35,7 @@ while 0 == 0:
     continue_action = input(
         "whould you like to add or remove more items? type yes to continue, no to quit: ")
     if continue_action.lower() != "yes":
+        grocery_list.clear()
         print("THANK YOU FOR USING GROCERY LIST MANAGER")
         break
     action = input("type add to add items, type remove to remove items: ")
