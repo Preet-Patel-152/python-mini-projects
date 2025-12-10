@@ -1,3 +1,6 @@
+# simple calculator program vrsion 1 this code allows the user to
+# perform basic arithmetic operations
+
 print("welcome to calculator vrsion 1")
 
 print("lets begin calculations")
