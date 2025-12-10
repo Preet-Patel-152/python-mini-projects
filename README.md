@@ -12,9 +12,9 @@ Each project focuses on a specific Python concept such as functions, loops, file
 |--------|-------------|
 | **simple-calculator** | Basic calculator program using user input and arithmetic operations. |
 | **guessing-game** | Number guessing game using loops and conditionals. |
-<!--
-
 | **grocery-list** | CLI tool for adding/removing items using Python lists. |
+
+<!--
 | **contact-book** | Contact manager using dictionaries for key-value storage. |
 | **password-generator** | Random password generator using functions and Python libraries. |
 | **notes-app** | Simple text-based notes app with file read/write. |
