@@ -4,7 +4,7 @@ num_add_con = int(input("How many contacts would you like to add? "))
 for x in range(num_add_con):
     name = input("Enter contact name: ")
     phone = input("Enter contact phone number: ")
-    contact_book[name] = phone
+    contact_book[name.strip()] = phone.strip()
     print("---------------")
 print("Current Contacts:")
 for name, phone in contact_book.items():
@@ -13,14 +13,14 @@ for name, phone in contact_book.items():
 action = input(
     "would you like to add or remove a contact? if add type add, if remove type remove or type quit to exit: ")
 
-if action.lower() == "quit" or action.lower() == "exit":
+if action.strip().lower() == "quit" or action.strip().lower() == "exit":
     print("THANK YOU FOR USING CONTACT BOOK APP")
 
-while action.lower() == "add" or action.lower() == "remove":
+while action.strip().lower() == "add" or action.strip().lower() == "remove":
     if action.lower() == "add":
         name = input("Enter contact name: ")
         phone = input("Enter contact phone number: ")
-        contact_book[name] = phone
+        contact_book[name.strip()] = phone.strip()
         print("Contact added!")
         action = input(
             "would you like to add or remove a contact?, if would like to quit type quit: ")
@@ -45,9 +45,9 @@ while action.lower() == "add" or action.lower() == "remove":
     print("would you like  to saerch for a contact?")
     search_action = input(
         "if yes type search, if no type no to continue: ")
-    if search_action.lower() == "search":
+    if search_action.lower().strip() == "search":
         search_name = input("Enter the name of the contact to search: ")
-        if search_name in contact_book:
+        if search_name.strip in contact_book:
             print(
                 f"Contact found: {search_name}: {contact_book[search_name]}")
         else:
