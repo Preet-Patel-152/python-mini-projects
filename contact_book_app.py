@@ -57,3 +57,12 @@ while action.strip().lower() == "add" or action.strip().lower() == "remove":
     print("Current Contacts:")
     for name, phone in contact_book.items():
         print(f"{name}: {phone}")
+
+
+# when you have the chance what needs to be done is rewirte this code,
+# use functuons to help with the addinf and removing
+#  ake a while loop for the code to be runnig till user puts in q to break out the while loop
+# if and elif statments to check what the user wants to do, and use functions to do the adding removing and searching
+# contacts main functions to have is to add pass number of contacts they want to add,
+#   remove number of contacts they want to and same with saerch
+# this will make the code more orgainized and easier to read
