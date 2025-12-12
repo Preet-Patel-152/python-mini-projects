@@ -59,5 +59,5 @@ Stay tuned for more projects!
 
 ## Connect With Me
 - GitHub: [Preet-Patel-152](https://github.com/Preet-Patel-152)
-- LinkedIn: *(add your link here)*
+- LinkedIn: https://www.linkedin.com/in/preet-patel-03a1b4268/
 
