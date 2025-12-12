@@ -13,9 +13,8 @@ Each project focuses on a specific Python concept such as functions, loops, file
 | **simple-calculator** | Basic calculator program using user input and arithmetic operations. |
 | **guessing-game** | Number guessing game using loops and conditionals. |
 | **grocery-list** | CLI tool for adding/removing items using Python lists. |
-
-<!--
 | **contact-book** | Contact manager using dictionaries for key-value storage. |
+<!--
 | **password-generator** | Random password generator using functions and Python libraries. |
 | **notes-app** | Simple text-based notes app with file read/write. |
 | **bank-account** | OOP project simulating deposits, withdrawals, and account state. |
@@ -60,5 +59,5 @@ Stay tuned for more projects!
 
 ## Connect With Me
 - GitHub: [Preet-Patel-152](https://github.com/Preet-Patel-152)
-- LinkedIn: *(add your link here)*
+- LinkedIn: https://www.linkedin.com/in/preet-patel-03a1b4268/
 
