@@ -20,11 +20,12 @@ print(f"encryption key: {cipher_text}")
 
 
 # Decryption process
-cipher_text = input("Enter the message to encrypt: ")
+cipher_text = input("Enter the message to encryption: ")
 plain_text = ""
 
 for char in cipher_text:
     index = key.index(char)
     plain_text += chars[index]
 
-print(f"")
+print(f"encryption key: {cipher_text}")
+print(f"Encrypted message: {plain_text}")
