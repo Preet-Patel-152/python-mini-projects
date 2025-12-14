@@ -25,18 +25,19 @@ while True:
             while True:
                 action_b = input(
                     "would you like to make ur own password or use to genrate one? type own or generate: ")
-                if action_b.lower() == "own":
-                    password = input("Enter a password: ")
-                    accounts[username] = password
-                    break
-                elif action_b.lower() == "generate":
-                    length = int(input("Enter desired password length: "))
-                    password = generate_password(length)
-                    accounts[username] = password
-                    print("Generated password:", password)
-                    break
-                else:
-                    print("Invalid option. Please type own or generate.")
+                match action_b.lower():
+                    case "own":
+                        password = input("Enter a password: ")
+                        accounts[username] = password
+                        break
+                    case "generate":
+                        length = int(input("Enter desired password length: "))
+                        password = generate_password(length)
+                        accounts[username] = password
+                        print("Generated password:", password)
+                        break
+                    case _:
+                        print("Invalid option. Please type own or generate.")
 
         print("Signup successful! You can now login.")
         print("-----------------------------------")
