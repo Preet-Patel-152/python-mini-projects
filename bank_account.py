@@ -28,19 +28,19 @@ while is_running:
             print("Account created successfully!")
             continue
 
-    elif action.strip().lower() == "exi":
-        name = input("Enter account holder name: ")
-        password = input("Enter account password: ")
+    elif action == "exi":
+        name = input("Enter account holder name: ").strip()
+        password = input("Enter account password: ").strip()
 
         if name in accounts and accounts[name].password == password:
-            bank1 = accounts[name]
+            bank_acc = accounts[name]
             print("Access granted.")
-            bank_acc = bank1
 
             while True:
 
                 print(
-                    "Available actions: deposit, withdraw, check balance, change password, exit")
+                    "\nAvailable actions:\n"
+                    "deposit\nwithdraw\ncheck balance\nchange password\nexit")
 
                 user_action = input("Enter action: ").strip().lower()
                 match user_action:
@@ -56,7 +56,7 @@ while is_running:
                         print(bank_acc.check_balance())
 
                     case "change password":
-                        new_password = input("Enter new password: ")
+                        new_password = input("Enter new password: ").strip()
                         print(bank_acc.change_acccout_password(new_password))
 
                     case "exit":
