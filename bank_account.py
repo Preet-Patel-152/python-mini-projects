@@ -9,9 +9,13 @@ is_running = True
 while is_running:
 
     action = input("would you like to create a new account or access existing account?\n"
-                   " type new for new account or exi for existing account: ").strip().lower()
+                   " type new for new account, exi for existing account or done to exit out the program: ").strip().lower()
 
-    if action == "new":
+    if action == "done":
+        print("THANK YOU FOR USING THE BANK ACCOUNT APP")
+        is_running = False
+
+    elif action == "new":
         name = input("Enter account holder name: ").strip()
         password = input("Enter account password: ").strip()
 
