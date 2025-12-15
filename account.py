@@ -1,15 +1,15 @@
 class bank:
     num_bank_acc = 0
 
-    def __init__(self, account_holder={}, initial_balance=0):
-        self.account_holder = account_holder
+    def __init__(self, name, password, initial_balance=0):
+        self.name = name
+        self.password = password
         self.balance = initial_balance
         bank.num_bank_acc += 1
 
     def change_acccout_password(self, new_password):
-        for holder in self.account_holder:
-            self.account_holder[holder] = new_password
-        return f"Password changed successfully for {list(self.account_holder.keys())[0]}."
+        self.password = new_password
+        return f"Password changed successfully for {self.name}."
 
     def deposit(self, amount):
         if amount > 0:

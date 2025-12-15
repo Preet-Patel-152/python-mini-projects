@@ -1,27 +1,35 @@
 from account import bank
 
-bank1 = bank({"Alice": "123456"}, 1000)
+accounts = {}
+accounts["Alice"] = bank("Alice", "password123", 1000)
+
 
 is_running = True
 
 while is_running:
 
-    action = input("would you like to create a new account or access existing account?"
-                   " type new for new account or exi for existing account: ")
+    action = input("would you like to create a new account or access existing account?\n"
+                   " type new for new account or exi for existing account: ").strip().lower()
 
-    if action.strip().lower() == "new":
-        name = input("Enter account holder name: ")
-        password = input("Enter account password: ")
+    if action == "new":
+        name = input("Enter account holder name: ").strip()
+        password = input("Enter account password: ").strip()
 
-        bank_acc = bank({name: password}, 0)
-        print("Account created successfully!")
-        continue
+        if name in accounts:
+            print("Username already exists. Try again.")
+            continue
+
+        else:
+            accounts[name] = bank(name, password, 0)
+            print("Account created successfully!")
+            continue
 
     elif action.strip().lower() == "exi":
         name = input("Enter account holder name: ")
         password = input("Enter account password: ")
 
-        if name in bank1.account_holder and bank1.account_holder[name] == password:
+        if name in accounts and accounts[name].password == password:
+            bank1 = accounts[name]
             print("Access granted.")
             bank_acc = bank1
 
