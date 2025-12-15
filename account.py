@@ -1,10 +1,3 @@
-# Deposit
-
-# Withdraw
-
-# Check balance
-
-
 class bank:
     num_bank_acc = 0
 
