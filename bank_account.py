@@ -141,12 +141,10 @@ while is_running:
                         print('      `      "      `')
 
                         while True:
-                            try:
-                                dev_action = input(
-                                    "what would you like to do check number of accounts or quit? ").strip().lower()
-                            except ValueError:
-                                print("Invalid input. Please try again.")
-                                continue
+
+                            dev_action = input(
+                                "what would you like to do check number of accounts or quit? ").strip().lower()
+
                             match dev_action:
                                 case "check number of accounts":
                                     print(
@@ -169,5 +167,4 @@ while is_running:
             continue
 
 
-# make sure to add transfer function to the list of features users can use
-# eeror handling for invalid inputs
+# add some comments
