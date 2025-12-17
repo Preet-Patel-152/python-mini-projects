@@ -44,7 +44,7 @@ while is_running:
 
                 print(
                     "\nAvailable actions:\n"
-                    "deposit\nwithdraw\ncheck balance\nchange password\ntransfer\n nexit")
+                    "deposit\nwithdraw\ncheck balance\nchange password\ntransfer\n exit")
 
                 user_action = input("Enter action: ").strip().lower()
                 match user_action:
