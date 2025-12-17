@@ -8,8 +8,12 @@ is_running = True
 
 while is_running:
 
-    action = input("would you like to create a new account or access existing account?\n"
-                   " type new for new account, exi for existing account or done to exit out the program: ").strip().lower()
+    try:
+        action = input("would you like to create a new account or access existing account?\n"
+                       " type new for new account, exi for existing account or done to exit out the program: ").strip().lower()
+    except ValueError:
+        print("Invalid input. Please try again.")
+        continue
 
     if action == "done":
         print("THANK YOU FOR USING THE BANK ACCOUNT APP")
@@ -40,16 +44,24 @@ while is_running:
 
                 print(
                     "\nAvailable actions:\n"
-                    "deposit\nwithdraw\ncheck balance\nchange password\nexit")
+                    "deposit\nwithdraw\ncheck balance\nchange password\ntransfer\n nexit")
 
                 user_action = input("Enter action: ").strip().lower()
                 match user_action:
                     case "deposit":
-                        amount = float(input("Enter amount to deposit: "))
+                        try:
+                            amount = float(input("Enter amount to deposit: "))
+                        except ValueError:
+                            print("Invalid input. Please enter a valid number.")
+                            continue
                         print(bank_acc.deposit(amount))
 
                     case "withdraw":
-                        amount = float(input("Enter amount to withdraw: "))
+                        try:
+                            amount = float(input("Enter amount to withdraw: "))
+                        except ValueError:
+                            print("Invalid input. Please enter a valid number.")
+                            continue
                         print(bank_acc.withdraw(amount))
 
                     case "check balance":
@@ -60,11 +72,20 @@ while is_running:
                         print(bank_acc.change_acccout_password(new_password))
 
                     case "transfer":
-                        recipient_name = input(
-                            "Enter recipient account holder name: ").strip()
-                        accounts_recipient = accounts.get(recipient_name)
+                        try:
+                            recipient_name = input(
+                                "Enter recipient account holder name: ").strip()
+                            accounts_recipient = accounts.get(recipient_name)
+                        except ValueError:
+                            print("Invalid input. Please try again.")
+                            continue
                         if accounts_recipient:
-                            amount = float(input("Enter amount to transfer: "))
+                            try:
+                                amount = float(
+                                    input("Enter amount to transfer: "))
+                            except ValueError:
+                                print("Invalid input. Please enter a valid number.")
+                                continue
                             if amount > 0 and amount <= bank_acc.balance:
                                 bank_acc.withdraw(amount)
                                 accounts_recipient.deposit(amount)
@@ -80,8 +101,12 @@ while is_running:
                         print('      `      "      `')
 
                         while True:
-                            dev_action = input(
-                                "what would you like to d ocheck number of accounts or quit? ").strip().lower()
+                            try:
+                                dev_action = input(
+                                    "what would you like to do check number of accounts or quit? ").strip().lower()
+                            except ValueError:
+                                print("Invalid input. Please try again.")
+                                continue
                             match dev_action:
                                 case "check number of accounts":
                                     print(
@@ -102,3 +127,7 @@ while is_running:
         else:
             print("Access denied. Incorrect name or password.")
             continue
+
+
+# make sure to add transfer function to the list of features users can use
+# eeror handling for invalid inputs
