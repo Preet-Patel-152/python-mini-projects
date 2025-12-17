@@ -1,0 +1,11 @@
+new
+Bob
+password
+exi
+Bob
+password
+deposit
+50
+check balance
+exit
+done
