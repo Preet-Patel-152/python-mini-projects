@@ -57,20 +57,41 @@ while is_running:
                     "deposit\nwithdraw\ncheck balance\nchange password\ntransfer\n exit")
 
                 user_action = input("Enter action: ").strip().lower()
+
+                if user_action not in ["deposit", "withdraw", "check balance", "change password", "transfer", "developer", "exit"]:
+                    print("Invalid action. Please try again.")
+                    continue
+
                 match user_action:
                     case "deposit":
 
-                        amount = float(input("Enter amount to deposit: "))
+                        try:
+                            amount = float(input("Enter amount to deposit: "))
 
-                        print(bank_acc.deposit(amount))
+                            if amount <= 0:
+                                print("Deposit amount must be positive.")
+                                continue
+                            else:
+                                print(bank_acc.deposit(amount))
+
+                        except ValueError:
+                            print("Invalid input. Please enter a valid number.")
+                            continue
 
                     case "withdraw":
                         try:
                             amount = float(input("Enter amount to withdraw: "))
+
+                            if amount <= 0 or amount > bank_acc.balance:
+                                print(
+                                    "Withdrawal amount must be positive and within available balance.")
+                                continue
+                            else:
+                                print(bank_acc.withdraw(amount))
+
                         except ValueError:
                             print("Invalid input. Please enter a valid number.")
                             continue
-                        print(bank_acc.withdraw(amount))
 
                     case "check balance":
                         print(bank_acc.check_balance())
@@ -80,27 +101,38 @@ while is_running:
                         print(bank_acc.change_acccout_password(new_password))
 
                     case "transfer":
-                        try:
-                            recipient_name = input(
-                                "Enter recipient account holder name: ").strip()
-                            accounts_recipient = accounts.get(recipient_name)
-                        except ValueError:
-                            print("Invalid input. Please try again.")
+
+                        recipient_name = input(
+                            "Enter recipient account holder name: ").strip()
+                        accounts_recipient = accounts.get(recipient_name)
+
+                        if not accounts_recipient:
+                            print(
+                                f"Error: Account for '{recipient_name}' not found.")
                             continue
-                        if accounts_recipient:
-                            try:
-                                amount = float(
-                                    input("Enter amount to transfer: "))
-                            except ValueError:
-                                print("Invalid input. Please enter a valid number.")
+
+                        if recipient_name == bank_acc.name:
+                            print("Error: You cannot transfer money to yourself.")
+                            continue
+
+                        try:
+                            amount = float(
+                                input("Enter amount to transfer: "))
+
+                            if amount <= 0 or amount > bank_acc.balance:
+                                print(
+                                    "Invalid amount. It must be positive and not exceed your balance.")
                                 continue
-                            if amount > 0 and amount <= bank_acc.balance:
+
+                            elif amount > 0 and amount <= bank_acc.balance:
                                 bank_acc.withdraw(amount)
                                 accounts_recipient.deposit(amount)
                                 print(
                                     f"Transferred ${amount} to {recipient_name}.")
-                            else:
-                                print("Insufficient funds or invalid amount.")
+
+                        except ValueError:
+                            print("Invalid input. Please enter a numeric amount.")
+
                     case "developer":
                         print("Developer mode activated.")
                         print('        _   ,_,   _')
