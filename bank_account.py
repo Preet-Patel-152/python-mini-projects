@@ -8,11 +8,11 @@ is_running = True
 
 while is_running:
 
-    try:
-        action = input("would you like to create a new account or access existing account?\n"
-                       " type new for new account, exi for existing account or done to exit out the program: ").strip().lower()
-    except ValueError:
-        print("Invalid input. Please try again.")
+    action = input("would you like to create a new account or access existing account?\n"
+                   " type new for new account, exi for existing account or done to exit out the program: ").strip().lower()
+
+    if action not in ["new", "exi", "done"]:
+        print("Invalid action. Please try again.")
         continue
 
     if action == "done":
@@ -21,6 +21,11 @@ while is_running:
 
     elif action == "new":
         name = input("Enter account holder name: ").strip()
+
+        if name.isalpha() == False:
+            print("Name must contain only alphabetic characters. Try again.")
+            continue
+
         password = input("Enter account password: ").strip()
 
         if name in accounts:
@@ -34,6 +39,11 @@ while is_running:
 
     elif action == "exi":
         name = input("Enter account holder name: ").strip()
+
+        if name.isalpha() == False:
+            print("Name must contain only alphabetic characters. Try again.")
+            continue
+
         password = input("Enter account password: ").strip()
 
         if name in accounts and accounts[name].password == password:
@@ -49,11 +59,9 @@ while is_running:
                 user_action = input("Enter action: ").strip().lower()
                 match user_action:
                     case "deposit":
-                        try:
-                            amount = float(input("Enter amount to deposit: "))
-                        except ValueError:
-                            print("Invalid input. Please enter a valid number.")
-                            continue
+
+                        amount = float(input("Enter amount to deposit: "))
+
                         print(bank_acc.deposit(amount))
 
                     case "withdraw":
