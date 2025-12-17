@@ -54,11 +54,11 @@ while is_running:
 
                 print(
                     "\nAvailable actions:\n"
-                    "deposit\nwithdraw\ncheck balance\nchange password\ntransfer\n exit")
+                    "deposit\nwithdraw\ncheck balance\nchange password\ntransfer\ncheck history\n exit")
 
                 user_action = input("Enter action: ").strip().lower()
 
-                if user_action not in ["deposit", "withdraw", "check balance", "change password", "transfer", "developer", "exit"]:
+                if user_action not in ["deposit", "withdraw", "check balance", "change password", "transfer", "developer", "exit", "check history"]:
                     print("Invalid action. Please try again.")
                     continue
 
@@ -100,6 +100,10 @@ while is_running:
                         new_password = input("Enter new password: ").strip()
                         print(bank_acc.change_acccout_password(new_password))
 
+                    case "check history":
+                        print("\n--- Transaction History ---")
+                        print(bank_acc.get_history())
+
                     case "transfer":
 
                         recipient_name = input(
@@ -124,11 +128,10 @@ while is_running:
                                     "Invalid amount. It must be positive and not exceed your balance.")
                                 continue
 
-                            elif amount > 0 and amount <= bank_acc.balance:
-                                bank_acc.withdraw(amount)
-                                accounts_recipient.deposit(amount)
-                                print(
-                                    f"Transferred ${amount} to {recipient_name}.")
+                            bank_acc.withdraw(amount)
+                            accounts_recipient.deposit(amount)
+                            print(
+                                f"Transferred ${amount} to {recipient_name}.")
 
                         except ValueError:
                             print("Invalid input. Please enter a numeric amount.")
